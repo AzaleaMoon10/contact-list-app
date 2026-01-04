@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useGlobalReducer from "../context/AppContext.jsx";
 
 export const Contacts = () => {
@@ -29,7 +29,7 @@ export const Contacts = () => {
                                 <p>{item.address}</p>
                             </div>
                             <div className="d-flex m-3 justify-content-around">
-                                <Link to="/" className="btn"onClick={() => {dispatch({ type: "set-contactInfo", payload: item });}}>Edit</Link>
+                                <Link to={`/contact/${item.id}`} className="btn"onClick={() => {dispatch({ type: "set-contactInfo", payload: item.id });}}>Edit</Link>
                                 <button href="#" className="btn" onClick={() => deleteContact(item.id)}>Delete</button>
                             </div>
                         </li>

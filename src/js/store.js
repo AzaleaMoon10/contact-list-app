@@ -10,8 +10,6 @@ export const initialStore = () => {
 
 export default function storeReducer(store, action = {}) {
   switch(action.type) {
-    case "set-user":
-      return { ...store, user: action.payload };
     case "set-contactInfo":
       return { ...store, contactInfo: action.payload };
     case "set-contacts":

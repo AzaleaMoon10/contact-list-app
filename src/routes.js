@@ -4,8 +4,10 @@ import {
     createRoutesFromElements,
     Route,
 } from "react-router-dom";
-import { Layout } from "./js/pages/Layout";
-import { Home } from "./js/pages/Home";
+import { Layout } from "./js/pages/Layout.jsx";
+import { Home } from "./js/pages/Home.jsx";
+import { UpdateContact } from "./js/pages/ContactHandle.jsx"
+import { SingleContact } from "./js/pages/Contact.jsx"
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,6 +22,9 @@ export const router = createBrowserRouter(
 
         {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
         <Route path= "/" element={<Home />} />
+        <Route path="/update" element={<UpdateContact />} />
+        <Route path="/update/:id" element={<UpdateContact />} />
+        <Route path="/contact/:id" element={<SingleContact />} />
       </Route>
     )
 );
