@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './styles/index.css'
+import { RouterProvider } from "react-router-dom";  // Import RouterProvider to use the router
+import { router } from "./routes";  // Import the router configuration
+import { StoreProvider } from './js/context/AppContext.jsx';  // Import the StoreProvider for global state management
+import 'bootstrap/dist/css/bootstrap.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const Main = () => {
+    return (
+        <React.StrictMode>  
+            {/* Provide global state to all components */}
+            <StoreProvider> 
+                {/* Set up routing for the application */} 
+                <RouterProvider router={router}>
+                </RouterProvider>
+            </StoreProvider>
+        </React.StrictMode>
+    );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Render the Main component into the root DOM element.
+ReactDOM.createRoot(document.getElementById('root')).render(<Main />)
