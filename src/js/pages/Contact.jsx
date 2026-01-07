@@ -19,7 +19,7 @@ export const SingleContact = () => {
   }
 
   return (
-      <div className="container d-flex justify-content-center mt-5">
+      <div className="container d-flex justify-content-center mt-5 mb-5">
         <div className="card">
           <img
             src={`https://randomuser.me/api/portraits/men/${singleContact.id}.jpg`}
@@ -37,13 +37,13 @@ export const SingleContact = () => {
             {singleContact.address}
             </p>
             <div className="d-flex justify-content-around gap-2">
-              <Link to={`/update/${singleContact.id}`} className="btn" onClick={() => 
+              <Link to={`/update/${singleContact.id}`} className="btn link-home" onClick={() => 
                 { dispatch({ type: "set-contactInfo", payload: singleContact});}}>
                     Edit
               </Link>
             </div>
             <div className="d-flex justify-content-center gap-2 ">
-              <Link to="/" className="btn">Back to Contacts</Link>
+              <Link to="/index" className="btn link-home">Back to Contacts</Link>
             </div>
           </div>
         </div>

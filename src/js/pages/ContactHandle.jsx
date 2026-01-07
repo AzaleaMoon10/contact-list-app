@@ -14,7 +14,7 @@ export const UpdateContact = () => {
     const [titleName, setTitleName] = useState("");
 
     const createContact = (payload) => {
-        fetch(`${store.url}/${store.user}/contacts/`, {
+        fetch(`${store.url}/agendas/${store.user}/contacts/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export const UpdateContact = () => {
         })
             .then((resp) => resp.json())
             .then((data) => {
-                dispatch({type: "set-contacts", payload: payload})
+                dispatch({type: "set-contacts", payload: [...store.contacts, payload]})
             })
             .catch((error) => console.log(error));
     }
@@ -75,8 +75,8 @@ export const UpdateContact = () => {
         setPhone("");
         setEmail("");
         setAddress("");
-        navigate("/");
         alert("Contact saved");
+        navigate("/index")
     }
 
     useEffect(() => {
@@ -95,7 +95,7 @@ export const UpdateContact = () => {
 
 
     return (
-        <div className="container">
+        <div className="container contact-form">
             <h1 className="text-center">{!id ? "Add a New Contact" : `Editing Contact: ${titleName}`}</h1>
             <form className="container" onSubmit={saveContact}>
                 <div className="mb-3">
@@ -115,10 +115,10 @@ export const UpdateContact = () => {
                     <input type="text" className="form-control" id="address" placeholder="Enter address" onChange={(e) => setAddress(e.target.value)} value={address} required />
                 </div>
                 <div className="mb-3">
-                    <button type="submit" className="btn btn-primary" >Save</button>
+                    <button type="submit" className="btn link-home save" >Save</button>
                 </div>
             </form>
-            <Link to="/">Back to Contacts</Link>
+            <Link className="btn link-home"to="/index">Back to Contacts</Link>
         </div>
     );
 };

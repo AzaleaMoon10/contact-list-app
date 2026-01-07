@@ -55,7 +55,7 @@ export const Home = () => {
     <div>
       <div className="container mt-5">
         <div className="container text-center">
-          <Link to="/Update" className="btn">Añadir nuevo contacto</Link>
+          <Link to="/Update" className="btn link-home add-contact">Añadir nuevo contacto</Link>
         </div>
       </div>
       <div className="container mx-auto mt-4">

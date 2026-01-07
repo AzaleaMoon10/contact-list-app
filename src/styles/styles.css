@@ -1,0 +1,44 @@
+body {
+    background-color: #D9B8C4;
+}
+.contact-card {
+    background-color: #957186;
+    border: 1px solid #957186;
+    border-radius: 5px;
+    color: white;
+}
+
+.add-contact {
+    background-color: #957186;
+}
+
+.link-home {
+    color:white;
+}
+
+.link-home:hover {
+    color: #703D57;
+}
+
+.footer {
+    color: white;
+}
+
+.card {
+    width: 500px;
+    padding: 5px;
+    background-color: #957186;
+    color:white;
+}
+
+.contact-form {
+    background-color: #957186;
+    color:white;
+    padding: 5px;
+    border: 1px solid #957186;
+    border-radius: 5px;
+}
+
+.save {
+ background-color: #703D57;
+}

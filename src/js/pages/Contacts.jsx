@@ -18,19 +18,19 @@ export const Contacts = () => {
             <div className="container ">
                 <ul className="contact-list">
                     {store.contacts.map((item) => (
-                        <li className="d-flex align-items-center mx-auto w-50" key={item.id}>
+                        <li className="d-flex align-items-center mx-auto w-50 mb-2 contact-card" key={item.id}>
                             <img src={`https://randomuser.me/api/portraits/men/${item.id}.jpg`} className="object-fit-contain border rounded" alt={item.name}/>
-                            <div className="ms-2">
+                            <div className="ms-3">
                                 <p>{item.name}</p>
                                 <p>{item.phone}</p>
                             </div>
-                            <div className="ms-2">
+                            <div className="ms-3">
                                 <p>{item.email}</p>
                                 <p>{item.address}</p>
                             </div>
                             <div className="d-flex m-3 justify-content-around">
-                                <Link to={`/contact/${item.id}`} className="btn"onClick={() => {dispatch({ type: "set-contactInfo", payload: item.id });}}>Edit</Link>
-                                <button href="#" className="btn" onClick={() => deleteContact(item.id)}>Delete</button>
+                                <Link to={`/contact/${item.id}`} className="btn link-home"onClick={() => {dispatch({ type: "set-contactInfo", payload: item.id });}}>Edit</Link>
+                                <button href="#" className="btn link-home" onClick={() => deleteContact(item.id)}>Delete</button>
                             </div>
                         </li>
                     ))}    
