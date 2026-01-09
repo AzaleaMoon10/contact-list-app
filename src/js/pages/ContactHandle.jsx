@@ -29,7 +29,7 @@ export const UpdateContact = () => {
     }
 
     const editContact = (id, contact) => {
-        fetch(`${store.url}/${store.user}/contacts/${id}`, {
+        fetch(`${store.url}/agendas/${store.user}/contacts/${id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
